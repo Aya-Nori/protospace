@@ -9,6 +9,9 @@ class ProtospacesController < ApplicationController
     @name = current_user.name
   end
   
+  def new
+  end
+
   def destroy
     redirect_to root_path
   end
