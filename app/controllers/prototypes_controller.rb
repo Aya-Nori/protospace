@@ -5,4 +5,7 @@ class PrototypesController < ApplicationController
   def create
   end
 
+  def new
+    @prototype = Prototype.new
+  end
 end
