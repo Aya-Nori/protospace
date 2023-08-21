@@ -10,6 +10,12 @@ class ProtospacesController < ApplicationController
   end
   
   def new
+    @prototype = Prototype.new
+  end
+
+  def create
+    Prototype.create(prototype_params)
+    redirect_to root_path
   end
 
   def destroy
