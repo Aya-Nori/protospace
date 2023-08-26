@@ -11,6 +11,19 @@ class PrototypesController < ApplicationController
     @prototype = Prototype.new
   end
 
+  def edit
+    @prototype = Prototype.find(params[:id])
+  end
+
+  def update
+    @prototype = Prototype.find(params[:id])
+    if @prototype.update(prototype_params)
+      redirect_to root_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def create
     Prototype.create(prototype_params)
     # redirect_to root_path
